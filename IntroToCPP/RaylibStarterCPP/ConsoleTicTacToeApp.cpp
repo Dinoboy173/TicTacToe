@@ -1,5 +1,5 @@
 #include "ConsoleTicTacToeApp.h"
-#include "raylib.h"
+#include "TicTacToeGame.h"
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
@@ -15,85 +15,60 @@ ConsoleTicTacToe::~ConsoleTicTacToe()
 
 void ConsoleTicTacToe::Run()
 {
-	Load();
-	Unload();
-}
-
-void ConsoleTicTacToe::Load()
-{
-	// Load Game assets here
-	Draw();
-
-	ConsoleMenu();
-}
-
-void ConsoleTicTacToe::Unload()
-{
-	// Unload Game assets here
-}
-
-void ConsoleTicTacToe::Update(float dt)
-{
-	// Game update logic here
-	
-}
-
-void ConsoleTicTacToe::Game()
-{
-	DrawGame();
-}
-
-void ConsoleTicTacToe::ConsoleMenu()
-{
-	while (true)
+	while (!m_shouldQuit)
 	{
-		int input = _getch();
-		switch (input)
-		{
-		case 72:
-			m_selection = 1;
-			DrawMenu();
-			break;
-		case 80:
-			m_selection = 2;
-			DrawMenu();
-			break;
+		system("CLS");
 
-		default: NULL;
-		}
-
-		if (input == 13)
+		if (m_gameState == GameStates::MENU)
 		{
-			if (m_selection == 1) Game();
-			if (m_selection == 2) Quit();
+			RunMenuState();
+			MenuControl();
 		}
+		else if (m_gameState == GameStates::PLAY) RunPlayState();
+		else if (m_gameState == GameStates::WIN) RunWinState();
 	}
 }
 
-void ConsoleTicTacToe::Draw()
+void ConsoleTicTacToe::RunMenuState()
 {
-	DrawMenu();
-}
-
-void ConsoleTicTacToe::DrawGame()
-{
-	system("CLS");
-	std::cout << "Game";
-}
-
-void ConsoleTicTacToe::DrawMenu()
-{
-	system("CLS");
-
 	std::cout << "Tic Tac Toe\n---------------------\n";
-	if (m_selection == 1) std::cout << ">";
-	std::cout << " 1. Play Game\n";
-	if (m_selection == 2) std::cout << ">";
-	std::cout << " 2. Quit Game\n---------------------\n";
+	if (m_selection == 1)
+		std::cout << ">";
+	std::cout << " Play Game\n";
+	if (m_selection == 2)
+		std::cout << ">";
+	std::cout << " Quit Game\n---------------------\n";
 }
 
-void ConsoleTicTacToe::Quit()
+void ConsoleTicTacToe::RunPlayState()
 {
-	system("CLS");
-	exit(0);
+	std::cout << "PlayState\n";
+}
+
+void ConsoleTicTacToe::RunWinState()
+{
+	std::cout << "RunState\n";
+}
+
+void ConsoleTicTacToe::MenuControl()
+{
+	int input = _getch();
+
+	switch (input)
+	{
+	case 72:
+		m_selection = 1;
+		break;
+	case 80:
+		m_selection = 2;
+		break;
+
+	default: NULL;
+	}
+
+	if (input == 13)
+	{
+		if (m_selection == 1) m_gameState = GameStates::PLAY;
+		if (m_selection == 2) m_shouldQuit = true;
+	}
 }

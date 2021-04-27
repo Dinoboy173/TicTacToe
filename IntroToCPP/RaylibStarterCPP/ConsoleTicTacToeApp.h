@@ -1,5 +1,12 @@
 #pragma once
 
+enum class GameStates
+{
+    MENU,
+    PLAY,
+    WIN
+};
+
 class ConsoleTicTacToe
 {
 public:
@@ -7,22 +14,18 @@ public:
     ~ConsoleTicTacToe();
 
     void Run();
-    void Load();
+    void RunMenuState();
+    void RunPlayState();
+    void RunWinState();
 
-    void Unload();
-    void Update(float dt);
+    void MenuControl();
 
-    void Game();
-    void ConsoleMenu();
-
-    void Draw();
-    void DrawGame();
-    void DrawMenu();
-
-    void Quit();
 protected:
+    bool m_shouldQuit = false;
+    int m_selection = 1;
+    GameStates m_gameState = GameStates::MENU;
+
 private:
     int m_windowWidth = 800;
     int m_windowHeight = 450;
-    int m_selection = 1;
 };
