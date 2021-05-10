@@ -1,8 +1,8 @@
-#include "Application.h"
+#include "App.h"
 
 int main(int argc, char** argv)
 {
-	Application app;
+	App app;
 	app.Run();
 
 	return 0;

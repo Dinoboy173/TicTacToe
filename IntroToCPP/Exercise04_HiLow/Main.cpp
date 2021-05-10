@@ -15,22 +15,22 @@ int main(int argc, char** argv)
 	std::cin >> guess;
 
 	do // redo all of this
-	(
-		if (guess > rand1)
-		{
-			std::cout << "Lower, have another guess: ";
-			std::cin >> guess;
-		}
-		else if (guess < rand1)
-		{
-			std::cout << "Higher, have another guess: ";
-			std::cin >> guess;
-		}
-		else if (guess == rand1)
-		{
-			std::cout << "Correct";
-			right = true;
-		}
+		(
+			if (guess > rand1)
+			{
+				std::cout << "Lower, have another guess: ";
+				std::cin >> guess;
+			}
+			else if (guess < rand1)
+			{
+				std::cout << "Higher, have another guess: ";
+				std::cin >> guess;
+			}
+			else if (guess == rand1)
+			{
+				std::cout << "Correct";
+				right = true;
+			}
 	);
 	while (!right);
 

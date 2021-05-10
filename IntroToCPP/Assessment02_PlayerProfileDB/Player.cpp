@@ -6,14 +6,14 @@
 
 Player::Player()
 {
-    strcpy(name, "");
+    strcpy_s(name, "");
 
     score = 0;
 }
 
 Player::Player(const char* name, int& score)
 {
-    strcpy(this->name, name);
+    strcpy_s(this->name, name);
 
     this->score = score;
 }

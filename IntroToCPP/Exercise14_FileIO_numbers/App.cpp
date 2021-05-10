@@ -16,7 +16,7 @@ void Application::Run()
 {
 	const char* filename = "data.dat";
 
-	srand(time(0));
+	srand(time(0)); // fix
 
 	num1 = rand() % 1000;
 	num2 = rand() % 1000;

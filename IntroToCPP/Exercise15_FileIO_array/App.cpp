@@ -16,7 +16,7 @@ void Application::Run()
 {
     const char* filename = "data.dat";
 
-    srand(time(0));
+    srand(time(0)); // fix
 
     for (int i = 0; i < NUMBERS_COUNT; i++)
         m_numbers[i] = rand() % 100;

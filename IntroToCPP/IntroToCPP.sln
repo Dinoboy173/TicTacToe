@@ -47,11 +47,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exercise10_RecursivePower",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment02_PlayerProfileDB", "Assessment02_PlayerProfileDB\Assessment02_PlayerProfileDB.vcxproj", "{C6635D9D-77C0-4973-9A08-98EE838217AE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment03_Debugging", "Assessment03_Debugging\IntroCPP_BinaryFileIO_NPCData.vcxproj", "{7544D2EA-300C-4AEB-AA7F-438762AE001F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assessments", "Assessments", "{AAF89E9C-BBAA-430F-B47D-DB585E84E1DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{8E307ADC-C396-4C86-8289-B29BC03F6FC7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment03_Debugging", "Assessment03_Debugging\IntroCPP_BinaryFileIO_NPCData.vcxproj", "{7544D2EA-300C-4AEB-AA7F-438762AE001F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

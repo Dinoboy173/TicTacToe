@@ -3,12 +3,12 @@
 #include "Dragon.h"
 #include <fstream>
 
-class Application
+class App
 {
 public:
 
-	Application();
-	~Application();
+	App();
+	~App();
 
 	void Run();
 

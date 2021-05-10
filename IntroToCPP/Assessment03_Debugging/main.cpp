@@ -58,8 +58,11 @@ int main(int argc, char* argv[])
             {
                 currentRecordIdx = 0;
             }
-            currentRecord = data.GetRecord(currentRecordIdx);
-            recordTexture = LoadTextureFromImage(currentRecord->image);
+            if (currentRecordIdx < 4)
+            {
+                currentRecord = data.GetRecord(currentRecordIdx);
+                recordTexture = LoadTextureFromImage(currentRecord->image);
+            }
         }
 
         if (IsKeyPressed(KEY_RIGHT))

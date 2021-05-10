@@ -1,23 +1,22 @@
-#include "Application.h"
+#include "App.h"
 #include "Dragon.h"
 #include <iostream>
 #include <string>
 #include <stdlib.h>
 
-Application::Application()
+App::App()
 {
-
-}
-Application::~Application()
-{
-
 }
 
-void Application::Run()
+App::~App()
+{
+}
+
+void App::Run()
 {
 	const char* filename = "data.dat";
 
-	srand(time(0));
+	srand(time(0)); // fix
 
 	m_dragons[0] = Dragon("fluffy");
 	m_dragons[1] = Dragon("bunny");
@@ -42,7 +41,7 @@ void Application::Run()
 	}
 }
 
-void Application::SaveToFile(const char* filename)
+void App::SaveToFile(const char* filename)
 {
 	std::fstream file;
 	file.open(filename, std::ios_base::out);
@@ -54,9 +53,10 @@ void Application::SaveToFile(const char* filename)
 	}
 
 	file.close();
+
 }
 
-void Application::LoadFromFile(const char* filename)
+void App::LoadFromFile(const char* filename)
 {
 	// TODO: write your code here
 	// See how we've structured the SaveToFile method
@@ -73,7 +73,7 @@ void Application::LoadFromFile(const char* filename)
 	file.close();
 }
 
-void Application::SaveDragon(std::fstream& file, const Dragon* dragon)
+void App::SaveDragon(std::fstream& file, const Dragon* dragon)
 {
 	// TODO: write code to write the dragons data to file
 	// remember, this time the dragons name is an std::string
@@ -92,7 +92,7 @@ void Application::SaveDragon(std::fstream& file, const Dragon* dragon)
 	file.write((char*)&dragon->foodEatenPerDay[0], sizeof(int) * 7);
 }
 
-void Application::LoadDragon(std::fstream& file, Dragon* dragon)
+void App::LoadDragon(std::fstream& file, Dragon* dragon)
 {
 	// TODO: write code to read the dragons data from file
 	// remember, this time the dragons name is an std::string

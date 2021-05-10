@@ -10,8 +10,7 @@ public:
 
     char dragons[numOfDragons];
 
-    int foodEatenInADay[numOfDragons, numOfDays];
-
+    int foodEatenInADay[numOfDragons] [numOfDays]; // probs wrong
 
 public:
 

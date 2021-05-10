@@ -17,7 +17,7 @@ void Application::Run()
 	const char* filename = "data.dat";
 
 	// how many numbers do we want to create?
-	srand(time(0));
+	srand(time(0)); // fix
 
 	m_numbers_count = (rand() % 20) + 1;
 
