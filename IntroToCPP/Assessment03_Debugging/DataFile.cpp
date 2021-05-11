@@ -13,12 +13,12 @@ DataFile::~DataFile()
 
 void DataFile::AddRecord(const std::string& imageFilename, const std::string& name, int age)
 {
-	Image i = LoadImage(imageFilename.c_str()); // loads new image being added to record
-
-	Record* r = new Record(); // creates new Record
-	r->image = i; // variable name for image
-	r->name = name; // variable name for name
-	r->age = age; // variable name for age
+	//Image i = LoadImage(imageFilename.c_str()); // loads new image being added to record
+	//
+	//Record* r = new Record(); // creates new Record
+	//r->image = i; // variable name for image
+	//r->name = name; // variable name for name
+	//r->age = age; // variable name for age
 }
 
 DataFile::Record* DataFile::GetRecord(int index)
@@ -35,7 +35,7 @@ DataFile::Record* DataFile::GetRecord(int index)
 	int format = 0;
 	int imageSize = 0; //---- 
 
-	if (index < recordCount) 
+	if (index < recordCount) // checks if the record index being asked for is in the record list
 	{
 		for (int i = 0; i < recordCount; i++)
 		{
@@ -63,12 +63,12 @@ DataFile::Record* DataFile::GetRecord(int index)
 
 	Image img = LoadImageEx((Color*)imgdata, width, height); // loads the information of the image into an Image
 
-	char* name = new char[nameSize + 1]; // creates a variable to hold the name
-	int age = 0; // create a variable to hold the age
+	char* name = new char[nameSize + 1];		// creates a variable to hold the name
+	int age = 0;									 // create a variable to hold the age
 
 	for (int i = 0; i < nameSize + 1; i++)
 	{
-		name[i] = '\0'; // sets all the random characters in the name variable to NULL
+		name[i] = '\0';								 // sets the random characters that will be used in the name variable to null termination character
 	}
 
 	infile.read((char*)name, nameSize); // puts the name into the name variable

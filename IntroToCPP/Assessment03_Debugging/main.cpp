@@ -65,18 +65,13 @@ int main(int argc, char* argv[])
         if (IsKeyPressed(KEY_RIGHT)) // goes to next record
         {
             currentRecordIdx++;
-            if (currentRecordIdx >= data.GetRecordCount()) // checks if the currentRecordIdx goes out of bounds of the list
+            if (currentRecordIdx >= data.GetRecordCount())              // checks if the currentRecordIdx goes out of bounds of the list
             {
-                currentRecordIdx = data.GetRecordCount(); // stops the program from exceeding the amount of records
+                currentRecordIdx = data.GetRecordCount() - 1;            // stops the program from exceeding the amount of records
             }
-
-            if (currentRecordIdx <= data.GetRecordCount() - 1) // checks if the program is at the end of the records list
-            {
-                currentRecord = data.GetRecord(currentRecordIdx); // gets next record
-                recordTexture = LoadTextureFromImage(currentRecord->image); // gets image for next record
-            }
+            currentRecord = data.GetRecord(currentRecordIdx);            // gets next record
+            recordTexture = LoadTextureFromImage(currentRecord->image); // gets image for next record
         }
-
 
         // Draw
         //----------------------------------------------------------------------------------
