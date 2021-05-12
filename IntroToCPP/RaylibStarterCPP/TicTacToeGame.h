@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class TicTacToe
 {
 public:
@@ -8,7 +10,8 @@ public:
 
 	void moveToken();
 	void placeToken();
-	void checkWinner();
+	std::string checkWinner(char board[3][3], char token);
+	std::string checkPlayer(char token);
 	void switchPlayer();
 protected:
 private:

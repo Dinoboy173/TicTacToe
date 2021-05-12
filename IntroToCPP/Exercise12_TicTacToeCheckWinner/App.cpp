@@ -57,6 +57,5 @@ std::string Application::CheckPlayer(char token)
     if (token == 'x')
         return "x Wins";
     else
-
         return "o Wins";
 }
