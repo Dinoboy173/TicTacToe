@@ -1,3 +1,4 @@
+#include <string>
 
 class Application
 {
@@ -7,6 +8,7 @@ public:
 	~Application();
 
 	void Run();
+	std::string CheckWinner(char board[3][3], char token);
 
 protected:
 private:
@@ -46,4 +48,3 @@ private:
 	};
 
 };
-

@@ -2,9 +2,9 @@ TODO:
 
 Debugging Assessment:
 - Add comments. /
-- Brief report with 3-4 tests, how it was tested and the results.
-- Screenshots of breakpoints, auto and custom watch variables, callstack.
-- Keyboard shortcuts for stepping through the code in the debugger.
+- Brief report with 3-4 tests, how it was tested and the results. /
+- Screenshots of breakpoints, auto and custom watch variables, callstack. /
+- Keyboard shortcuts for stepping through the code in the debugger. /
 
 TicTacToe Assessment: 
 - TicTacToeCheckWinner Exercise
