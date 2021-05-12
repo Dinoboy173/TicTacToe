@@ -1,24 +1,24 @@
-#include "ConsoleTicTacToeApp.h"
+#include "TicTacToeApp.h"
 #include "TicTacToeGame.h"
 #include <iostream>
 #include <conio.h>
 #include <stdlib.h>
 #include <string>
 
-ConsoleTicTacToe::ConsoleTicTacToe()
+TicTacToeApp::TicTacToeApp()
 {
-	
+
 }
-ConsoleTicTacToe::~ConsoleTicTacToe()
+TicTacToeApp::~TicTacToeApp()
 {
 
 }
 
-void ConsoleTicTacToe::Run()
+void TicTacToeApp::Run()
 {
 	while (!m_shouldQuit)
 	{
-		system("CLS");
+		//system("CLS");
 
 		if (m_gameState == GameStates::MENU)
 		{
@@ -30,7 +30,7 @@ void ConsoleTicTacToe::Run()
 	}
 }
 
-void ConsoleTicTacToe::RunMenuState()
+void TicTacToeApp::RunMenuState()
 {
 	std::cout << "Tic Tac Toe\n---------------------\n";
 	if (m_menuSelection == 1)
@@ -41,18 +41,18 @@ void ConsoleTicTacToe::RunMenuState()
 	std::cout << " Quit Game\n---------------------\n";
 }
 
-void ConsoleTicTacToe::RunPlayState()
+void TicTacToeApp::RunPlayState()
 {
 	std::cout << "PlayState\n";
 	GameControl();
 }
 
-void ConsoleTicTacToe::RunWinState()
+void TicTacToeApp::RunWinState()
 {
 	std::cout << "RunState\n";
 }
 
-void ConsoleTicTacToe::MenuControl()
+void TicTacToeApp::MenuControl()
 {
 	int input = _getch();
 
@@ -75,19 +75,23 @@ void ConsoleTicTacToe::MenuControl()
 	}
 }
 
-void ConsoleTicTacToe::GameControl()
+void TicTacToeApp::GameControl()
 {
 	int input = _getch();
-
-	std::cout << input;
 
 	switch (input)
 	{
 	case 72:
 		m_gameSelection = 1;
 		break;
-	case 80:
+	case 75:
 		m_gameSelection = 2;
+		break;
+	case 77:
+		m_gameSelection = 3;
+		break;
+	case 80:
+		m_gameSelection = 4;
 		break;
 
 	default: NULL;

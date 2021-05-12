@@ -7,11 +7,11 @@ enum class GameStates
     WIN
 };
 
-class ConsoleTicTacToe
+class TicTacToeApp
 {
 public:
-    ConsoleTicTacToe();
-    ~ConsoleTicTacToe();
+    TicTacToeApp();
+    ~TicTacToeApp();
 
     void Run();
     void RunMenuState();

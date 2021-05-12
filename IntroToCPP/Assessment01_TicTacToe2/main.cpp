@@ -1,5 +1,4 @@
-
-#include "ConsoleTicTacToeApp.h"
+#include "TicTacToeApp.h"
 
 int main(int argc, char** argv)
 {
@@ -7,7 +6,7 @@ int main(int argc, char** argv)
 
     if (run)
     {
-        ConsoleTicTacToe app;
+        TicTacToeApp app;
         app.Run();
     }
 
