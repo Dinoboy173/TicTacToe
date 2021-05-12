@@ -29,34 +29,34 @@ void Application::Run()
 
 std::string Application::CheckWinner(char board[3][3], char token)
 {
-	bool cell1 = false;
-	bool cell2 = false;
-	bool cell3 = false;
+    for (int i = 0; i <= 2;)
+    {
+        if (board[i][0] == token && board[i][1] == token && board[i][2] == token || board[0][i] == token && board[1][i] == token && board[2][i] == token)
+        {
+            return CheckPlayer(token);
+        }
 
-	for (int i = 0; i < 3; i++)
-	{
-		// cell1 = false;
-		// cell2 = false;
-		// cell3 = false;
+        i++;
+    }
 
-		if (board[i][0] == token)
-			cell1 = true;
-		
-		if (board[i][1] == token)
-			cell2 = true;
+    for (int i = 0; i <= 2;)
+    {
+        if (board[1][1] == token && board[0 + i][0] == token && board[2 - i][2] == token)
+        {
+            return CheckPlayer(token);
+        }
 
-		if (board[i][2] == token)
-			cell3 = true;
-	}
+        i = i + 2;
+    }
 
-	if (cell1 && cell2 && cell3 && token == 'x')
-		return "x Wins";
-
-	if (cell1 && cell2 && cell3 && token == 'o')
-		return "o Wins";
-
-
-	return "No Winner";
+    return "No Winner";
 }
 
+std::string Application::CheckPlayer(char token)
+{
+    if (token == 'x')
+        return "x Wins";
+    else
 
+        return "o Wins";
+}

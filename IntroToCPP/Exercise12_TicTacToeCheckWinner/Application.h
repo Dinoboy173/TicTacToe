@@ -9,6 +9,7 @@ public:
 
 	void Run();
 	std::string CheckWinner(char board[3][3], char token);
+	std::string CheckPlayer(char token);
 
 protected:
 private:
