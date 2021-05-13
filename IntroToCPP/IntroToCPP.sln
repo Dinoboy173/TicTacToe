@@ -53,7 +53,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment03_Debugging", "A
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntroCPP_BinaryFileIO_NPCData", "IntroCPP_BinaryFileIO_NPCData\IntroCPP_BinaryFileIO_NPCData.vcxproj", "{40B7A5ED-E344-46D1-8734-7A64844AC50A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment01_TicTacToe", "Assessment01_TicTacToe2\Assessment01_TicTacToe2.vcxproj", "{60A95102-78FC-4562-B5C3-627DDAB2425C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Assessment01_TicTacToe", "Assessment01_TicTacToe\Assessment01_TicTacToe.vcxproj", "{60A95102-78FC-4562-B5C3-627DDAB2425C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
