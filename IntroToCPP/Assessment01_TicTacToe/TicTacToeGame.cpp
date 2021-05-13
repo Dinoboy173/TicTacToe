@@ -12,19 +12,19 @@ TicTacToe::~TicTacToe()
 
 }
 
-void TicTacToe::MoveToken(const char direction[])
+void TicTacToe::MoveToken(int direction)
 {
     TicTacToeBoard b;
 
-    if (direction == "up")
+    if (direction == 1)
     {
-        if (b.board[b.m_selectorPosY][b.m_selectorPosX] = b.board[0][b.m_selectorPosX])
-        {
-            b.board[b.m_selectorPosY][b.m_selectorPosX] = b.m_underSelector;
-            b.m_underSelector = b.board[b.m_selectorPosY - 1][b.m_selectorPosX];
-            b.board[b.m_selectorPosY][b.m_selectorPosX] = (char)Tokens::SELECTOR;
-            b.m_selectorPosY = b.m_selectorPosY - 1;
-        }
+        b.m_selectorPosY = 0;
+        //if (b.board[b.m_selectorPosY][b.m_selectorPosX] = !b.board[0][b.m_selectorPosX])
+        //{
+            //b.board[b.m_selectorPosY][b.m_selectorPosX] = b.m_underSelector;
+            //b.m_selectorPosY = b.m_selectorPosY - 1;
+            //b.m_underSelector = b.board[b.m_selectorPosY][b.m_selectorPosX];
+        //}
     }
 }
 

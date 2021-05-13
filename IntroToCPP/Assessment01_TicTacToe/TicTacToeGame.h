@@ -7,7 +7,7 @@ public:
 	TicTacToe();
 	~TicTacToe();
 
-	void MoveToken(const char direction[]);
+	void MoveToken(int direction);
 	void PlaceToken();
 	std::string CheckWinner(char board[3][3], char token);
 	std::string CheckPlayer(char token);

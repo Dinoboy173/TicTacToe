@@ -18,7 +18,7 @@ public:
 		{' ', ' ', ' '}
 	};
 
-	int m_selectorPosX = 1;
-	int m_selectorPosY = 1;
-	char m_underSelector;
+	int m_selectorPosX = 0;
+	int m_selectorPosY = 0;
+	char m_underSelector = ' ';
 };

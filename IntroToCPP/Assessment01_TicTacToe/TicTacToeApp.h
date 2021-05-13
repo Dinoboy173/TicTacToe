@@ -4,13 +4,17 @@
 enum class GameStates
 {
     MENU,
+    CONTROLS,
     PLAY,
     WIN
 };
 
 enum class Controls
 {
+    BACK = 8,
     ENTER = 13,
+    QUIT = 27,
+    SELECTGAMEPOS = 32,
     UP = 72,
     LEFT = 75,
     RIGHT = 77,
@@ -25,10 +29,12 @@ public:
 
     void Run();
     void RunMenuState();
+    void RunControlsState();
     void RunPlayState();
     void RunWinState();
 
     void MenuControl();
+    void ControlsControl();
     void GameControl();
 
 protected:
