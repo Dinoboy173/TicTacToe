@@ -1,5 +1,5 @@
 #include "TicTacToeGame.h"
-#include "TicTacToeBoard.h"
+#include "TicTacToeApp.h"
 #include <string>
 
 TicTacToe::TicTacToe()
@@ -12,28 +12,13 @@ TicTacToe::~TicTacToe()
 
 }
 
-void TicTacToe::MoveToken(int direction)
-{
-    TicTacToeBoard b;
 
-    if (direction == 1)
-    {
-        b.m_selectorPosY = 0;
-        //if (b.board[b.m_selectorPosY][b.m_selectorPosX] = !b.board[0][b.m_selectorPosX])
-        //{
-            //b.board[b.m_selectorPosY][b.m_selectorPosX] = b.m_underSelector;
-            //b.m_selectorPosY = b.m_selectorPosY - 1;
-            //b.m_underSelector = b.board[b.m_selectorPosY][b.m_selectorPosX];
-        //}
-    }
-}
-
-void TicTacToe::PlaceToken()
+void TicTacToe::PlaceToken(char token)
 {
 
 }
 
-std::string TicTacToe::CheckWinner(char board[3][3], char token)
+std::string TicTacToe::CheckWinner(char token)
 {
     for (int i = 0; i <= 2;)
     {
@@ -66,7 +51,10 @@ std::string TicTacToe::CheckPlayer(char token)
         return "o Wins";
 }
 
-void TicTacToe::SwitchPlayer()
+char TicTacToe::SwitchPlayer(char token)
 {
-
+    if (token == 'x')
+        return 'o';
+    else if (token == 'o')
+        return 'x';
 }

@@ -3,15 +3,24 @@
 
 class TicTacToe
 {
+
 public:
 	TicTacToe();
 	~TicTacToe();
 
-	void MoveToken(int direction);
-	void PlaceToken();
-	std::string CheckWinner(char board[3][3], char token);
+	void PlaceToken(char token);
+	std::string CheckWinner(char token);
 	std::string CheckPlayer(char token);
-	void SwitchPlayer();
+	char SwitchPlayer(char token);
+
+public:
+	char board[3][3] =
+	{
+		{ ' ', ' ', ' ' },
+		{ ' ', ' ', ' ' },
+		{ ' ', ' ', ' ' }
+	};
+
 protected:
 private:
 };

@@ -32,8 +32,5 @@
     <ClInclude Include="TicTacToeApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TicTacToeBoard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

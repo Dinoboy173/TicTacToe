@@ -1,11 +1,8 @@
 #include "TicTacToeApp.h"
 #include "TicTacToeGame.h"
-#include "TicTacToeBoard.h"
 #include <iostream>
 #include <conio.h>
 #include <string>
-
-TicTacToeBoard b;
 
 TicTacToeApp::TicTacToeApp()
 {
@@ -33,8 +30,7 @@ void TicTacToeApp::Run()
 			RunPlayState();
 			GameControl();
 		}
-			
-
+		
 		else if (m_gameState == GameStates::CONTROLS)
 			RunControlsState();
 
@@ -66,18 +62,19 @@ void TicTacToeApp::RunControlsState()
 
 void TicTacToeApp::RunPlayState()
 {
-	//TicTacToeBoard b;
-
-	b.board[b.m_selectorPosY][b.m_selectorPosX] = (char)Tokens::SELECTOR;
+	m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::SELECTOR;
 
 	for (int i = 0; i <= 2; i++)
 	{
 		for (int j = 0; j <= 2; j++)
 		{
-			std::cout << "|" << b.board[i][j];
+			std::cout << "|";
+
+			std::cout << m_game.board[i][j];
 		}
 		std::cout << "|\n";
 	}
+	std::cout << "\nCurrent Player: " << m_currentPlayer;
 }
 
 void TicTacToeApp::RunWinState()
@@ -87,8 +84,6 @@ void TicTacToeApp::RunWinState()
 
 void TicTacToeApp::MenuControl()
 {
-	//TicTacToeBoard b;
-
 	int input = _getch();
 
 	switch (input)
@@ -109,9 +104,6 @@ void TicTacToeApp::MenuControl()
 	{
 		if (m_menuSelection == 1)
 		{
-			b.m_selectorPosX = 1;
-			b.m_selectorPosY = 1;
-
 			m_gameState = GameStates::PLAY;
 		}
 		else if (m_menuSelection == 2)
@@ -132,7 +124,6 @@ void TicTacToeApp::ControlsControl()
 void TicTacToeApp::GameControl()
 {
 	int input = _getch();
-	TicTacToe game;
 
 	switch (input)
 	{
@@ -148,6 +139,9 @@ void TicTacToeApp::GameControl()
 	case (int)Controls::DOWN:
 		m_gameSelection = 4;
 		break;
+	case (int)Controls::SELECTGAMEPOS:
+		m_gameSelection = 5;
+		break;
 
 	default: NULL;
 	}
@@ -156,11 +150,57 @@ void TicTacToeApp::GameControl()
 		m_shouldQuit = true;
 
 	if (m_gameSelection == 1)
-		game.MoveToken(m_gameSelection);
+		MoveToken(m_gameSelection);
 	else if (m_gameSelection == 2)
-		game.MoveToken(m_gameSelection);
+		MoveToken(m_gameSelection);
 	else if (m_gameSelection == 3)
-		game.MoveToken(m_gameSelection);
+		MoveToken(m_gameSelection);
 	else if (m_gameSelection == 4)
-			game.MoveToken(m_gameSelection);
+		MoveToken(m_gameSelection);
+	else if (m_gameSelection == 5)
+	{
+		TicTacToe().PlaceToken(m_currentPlayer);
+	    //TicTacToe().CheckWinner(m_currentPlayer);
+		m_currentPlayer = TicTacToe().SwitchPlayer(m_currentPlayer);
+	}
+}
+
+void TicTacToeApp::MoveToken(int direction)
+{
+	if (direction == 1)
+	{
+		if (m_selectorPos[0] >= 1)
+		{
+			m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::BLANK;
+			m_selectorPos[0] -= 1;
+			m_gameSelection = 0;
+		}
+	}
+	if (direction == 2)
+	{
+		if (m_selectorPos[1] >= 1)
+		{
+			m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::BLANK;
+			m_selectorPos[1] -= 1;
+			m_gameSelection = 0;
+		}
+	}
+	if (direction == 3)
+	{
+		if (m_selectorPos[1] <= 1)
+		{
+			m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::BLANK;
+			m_selectorPos[1] += 1;
+			m_gameSelection = 0;
+		}
+	}
+	if (direction == 4)
+	{
+		if (m_selectorPos[0] <= 1)
+		{
+			m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::BLANK;
+			m_selectorPos[0] += 1;
+			m_gameSelection = 0;
+		}
+	}
 }
