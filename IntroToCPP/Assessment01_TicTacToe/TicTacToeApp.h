@@ -1,6 +1,5 @@
 #pragma once
 #include "TicTacToeGame.h"
-#include <vector>
 
 enum class GameStates
 {
@@ -43,21 +42,26 @@ public:
     void RunWinState();
 
     void MenuControl();
-    void ControlsControl();
+    void MiscControl();
     void GameControl();
-
+    
+    void PlaceBlank();
     void MoveToken(int direction);
+
+public:
+    int m_selectorPos[2] = { 1, 1 };
 
 protected:
     bool m_shouldQuit = false;
+    bool invalidPlacement = false;
     int m_menuSelection = 1;
     int m_gameSelection = 0;
+    bool winner = false;
     GameStates m_gameState = GameStates::MENU;
 
-    int m_selectorPos[2] = { 1, 1 };
-    char m_currentPlayer = 'x';
+    char m_currentPlayer = (char)Tokens::X;
 
-    TicTacToe m_game;
+    //TicTacToe m_game;
 
 private:
     int m_windowWidth = 800;
