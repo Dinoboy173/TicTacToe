@@ -64,9 +64,12 @@ void TicTacToeApp::RunControlsState()
 
 void TicTacToeApp::RunPlayState()
 {
-	//TicTacToe m_game;
-	if (m_game.board[m_selectorPos[0]][m_selectorPos[1]] == (char)Tokens::BLANK)
-		m_game.board[m_selectorPos[0]][m_selectorPos[1]] = (char)Tokens::SELECTOR;
+	int selectedRow = m_selectorPos[0];
+	int selectedCol = m_selectorPos[1];
+	char selectedToken = m_game.GetToken(selectedRow, selectedCol);
+
+	if (selectedToken == (char)Tokens::BLANK)
+		m_game.SetToken(selectedRow, selectedCol, (char)Tokens::SELECTOR);
 
 	for (int i = 0; i <= 2; i++)
 	{
@@ -137,8 +140,6 @@ void TicTacToeApp::MiscControl()
 
 void TicTacToeApp::GameControl()
 {
-	//TicTacToe m_game;
-
 	int input = _getch();
 
 	switch (input)
@@ -195,8 +196,6 @@ void TicTacToeApp::GameControl()
 
 void TicTacToeApp::MoveToken(int direction)
 {
-	//TicTacToe m_game;
-
 	if (direction == 1)
 	{
 		if (m_selectorPos[0] >= 1)

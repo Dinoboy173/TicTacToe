@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "Player.h"
 #include "PlayerDB.h"
 
@@ -13,6 +15,13 @@ public:
 	void Run();
 
 protected:
+
+	std::string m_command;
+	std::string m_get;
+	Player m_newPlayer;
+	Player m_pGet;
+	char m_getPlayer[32];
+	int m_getScore;
 
 	const char* filename = "dateBase.dat";
 

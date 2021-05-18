@@ -49,3 +49,13 @@ char TicTacToe::SwitchPlayer(char token)
     else if (token == (char)Tokens::O)
         return (char)Tokens::X;
 }
+
+char TicTacToe::GetToken(int row, int col)
+{
+    return board[row][col];
+}
+
+void TicTacToe::SetToken(int row, int col, char val)
+{
+    board[row][col] = val;
+}

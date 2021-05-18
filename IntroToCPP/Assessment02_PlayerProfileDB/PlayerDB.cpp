@@ -23,12 +23,20 @@ void PlayerDB::Add(const char* name, int score)
 
 void PlayerDB::Remove(Player)
 {
-
+    
 }
 
-void PlayerDB::GetByName(Player)
+Player PlayerDB::GetByName(char player[32])
 {
+    for (int i = 0; i < m_count * sizeof(Player); i++)
+    {
+        if (m_records[m_count * sizeof(Player)].name == player)
+        {
+            return m_records[m_count * sizeof(Player)];
+        }
+    }
 
+    return Player("Player Doesn't Exist", 0);
 }
 
 void PlayerDB::GetByScore()
@@ -78,7 +86,16 @@ void PlayerDB::Load(const char* filename)
 
 void PlayerDB::Clear(const char* filename)
 {
+    file.open(filename, std::ios_base::out | std::ios_base::binary);
 
+    if (file.is_open())
+    {
+        file.clear();
+
+        m_count = 0;
+
+        file.close();
+    }
 }
 
 void PlayerDB::GetHighScore()
@@ -86,12 +103,7 @@ void PlayerDB::GetHighScore()
 
 }
 
-Player PlayerDB::ShowAllPlayers()
+Player PlayerDB::ShowAllPlayers(int count)
 {
-    for (int i = 0; i < m_count; i++)
-    {
-        return m_records[i * 32];
-    }
-
-    return m_records[0];
+    return m_records[count];
 }

@@ -10,7 +10,7 @@ public:
 public:
 
     Player();
-    Player(const char* name, int& score);
+    Player(const char* name, int score);
     ~Player();
 
 protected:

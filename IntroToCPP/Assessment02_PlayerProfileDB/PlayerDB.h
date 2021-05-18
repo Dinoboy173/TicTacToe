@@ -10,7 +10,7 @@ public:
 
     void Add(const char* name, int score);
     void Remove(Player);
-    void GetByName(Player);
+    Player GetByName(char player[32]);
     void GetByScore();
     void UpdatePlayers(Player);
     void Sort();
@@ -18,12 +18,13 @@ public:
     void Load(const char* filename);
     void Clear(const char* filename);
     void GetHighScore();
-    Player ShowAllPlayers();
+    Player ShowAllPlayers(int count);
+
+    int m_count = 0;
 
 protected:
 
     Player* m_records = nullptr;
-    int m_count = 0;
     std::fstream file;
 
 private:

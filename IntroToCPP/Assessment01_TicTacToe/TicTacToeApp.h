@@ -29,6 +29,7 @@ enum class Tokens
     X = 120
 };
 
+
 class TicTacToeApp
 {
 public:
@@ -36,6 +37,7 @@ public:
     ~TicTacToeApp();
 
     void Run();
+
     void RunMenuState();
     void RunControlsState();
     void RunPlayState();
