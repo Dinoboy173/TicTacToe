@@ -39,8 +39,6 @@ void Application::Run()
         
         if (m_command == "add")
         {
-            std::cout << "Database < Add < ";
-
             std::cin >> m_newPlayer.name >> m_newPlayer.score;
 
             db.Add(m_newPlayer.name, m_newPlayer.score);
@@ -52,8 +50,6 @@ void Application::Run()
         
         if (m_command == "list")
         {
-            std::cout << "Database < List\n";
-
             for (int i = 0; i < db.m_count; i++)
             {
                 std::cout << db.ShowAllPlayers(i).name << " " << db.ShowAllPlayers(i).score << std::endl;
@@ -85,7 +81,6 @@ void Application::Run()
         
         if (m_command == "remove")
         {
-            std::cout << "Database < Remove < ";
             std::cin >> m_pGet.name >> m_pGet.score;
             std::cout << std::endl;
             
@@ -111,13 +106,7 @@ void Application::Run()
 
         if (m_command == "update")
         {
-            std::cout << "Database < Update < Player < ";
-
-            std::cin >> m_pGet.name >> m_pGet.score;
-
-            std::cout << "\nDatabase < Update < New Player < ";
-
-            std::cin >> m_newPlayer.name >> m_newPlayer.score;
+            std::cin >> m_pGet.name >> m_pGet.score >> m_newPlayer.name >> m_newPlayer.score;
 
             m_updated = db.UpdatePlayers(m_pGet,m_newPlayer);
 
@@ -134,20 +123,35 @@ void Application::Run()
                 m_pGet = db.GetHighScore();
             }
 
-            std::cout << "Database < High Score\n" << m_pGet.name << " " << m_pGet.score; // not done
+            std::cout << "Database < High Score\n" << m_pGet.name << " " << m_pGet.score;
 
             std::cout << std::endl << std::endl;
+        }
+
+        if (m_command == "help")
+        {
+            std::cout << "Commands:\n\n";
+            std::cout << "Load\nLoads the database file\n\n";
+            std::cout << "Save\nSaves the database file\n\n";
+            std::cout << "Add <name> <score>\nTakes a name and score then adds them to the database\n\n";
+            std::cout << "Remove <name> <score>\nTakes a name and a score then removes them from the database\n\n";
+            std::cout << "List\nPrints the contents of the database in its current order\n\n";
+            std::cout << "Clear\nClears the contents of the database\n\n";
+            std::cout << "Sort Names\nSorts the database in alphabetical order\n\n";
+            std::cout << "Sort Scores\nSorts the database in numerical order\n\n";
+            std::cout << "Get Player <name>\nPrints players with <name> from database\n\n";
+            std::cout << "Get Score <score>\nPrints players with <score> from database\n\n";
+            std::cout << "Update <current name> <current score> <new name> <new score>\nUpdates a name and/or score in the database\n\n";
+            std::cout << "High\nPrints the player with the highest score\n\n";
         }
     }
 }
 
 void Application::GetPlayer()
 {
-    std::cout << "Database < Get < Player < ";
     std::cin >> m_getPlayer;
-    std::cout << std::endl;
 
-    std::cout << "Database < Player";
+    std::cout << "Database < Get < Player";
 
     for (int i = 0; i < db.m_count; i++)
     {
@@ -170,11 +174,9 @@ void Application::GetPlayer()
 
 void Application::GetScore()
 {
-    std::cout << "Database < Get < Score < ";
     std::cin >> m_getScore;
-    std::cout << std::endl;
 
-    std::cout << "Database < Score";
+    std::cout << "Database < Get < Score";
 
     for (int i = 0; i < db.m_count; i++)
     {

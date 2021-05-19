@@ -94,6 +94,16 @@ bool PlayerDB::Sort(const char* sortBy)
         {
             for (int j = 0; j < m_count - i - 1; j++)
             {
+                if (m_records[j].name[0] == m_records[j + 1].name[0])
+                {
+                    if ((int)m_records[j].name[1] > (int)m_records[j + 1].name[1]) // clean up
+                    {
+                        temp[0] = m_records[j];
+                        m_records[j] = m_records[j + 1];
+                        m_records[j + 1] = temp[0];
+                    }
+                }
+
                 if ((int)m_records[j].name[0] > (int)m_records[j + 1].name[0])
                 {
                     temp[0] = m_records[j];
@@ -113,7 +123,7 @@ bool PlayerDB::Sort(const char* sortBy)
         {
             for (int j = 0; j < m_count - i - 1; j++)
             {
-                if (m_records[j].score > m_records[j + 1].score)
+                if (m_records[j].score > m_records[j + 1].score) // sore by name if scores are same
                 {
                     temp[0] = m_records[j];
                     m_records[j] = m_records[j + 1];
@@ -179,7 +189,7 @@ Player PlayerDB::GetHighScore()
 
     for (int i = 0; i < m_count; i++)
     {
-        if (m_records[m_count].score > temp[0].score) // not done
+        if (m_records[i].score > temp[0].score)
         {
             temp[0] = m_records[i];
         }
