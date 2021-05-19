@@ -18,6 +18,13 @@ Player::Player(const char* name, int score)
     this->score = score;
 }
 
+Player::Player(int nullReturn)
+{
+    strcpy_s(this->name, "");
+
+    this->score = NULL;
+}
+
 Player::~Player()
 {
 

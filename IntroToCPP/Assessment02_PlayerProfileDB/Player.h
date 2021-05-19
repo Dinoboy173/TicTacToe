@@ -11,6 +11,7 @@ public:
 
     Player();
     Player(const char* name, int score);
+    Player(int nullReturn);
     ~Player();
 
 protected:

@@ -9,15 +9,15 @@ class PlayerDB
 public:
 
     void Add(const char* name, int score);
-    void Remove(Player);
-    Player GetByName(char player[32]);
-    void GetByScore();
-    void UpdatePlayers(Player);
-    void Sort();
+    bool Remove(Player player);
+    Player GetByName(const char* player, int count);
+    Player GetByScore(int score, int count);
+    bool UpdatePlayers(Player currentPlayer, Player newPlayer);
+    bool Sort(const char* sortBy);
     void Save(const char* filename);
     void Load(const char* filename);
     void Clear(const char* filename);
-    void GetHighScore();
+    Player GetHighScore();
     Player ShowAllPlayers(int count);
 
     int m_count = 0;

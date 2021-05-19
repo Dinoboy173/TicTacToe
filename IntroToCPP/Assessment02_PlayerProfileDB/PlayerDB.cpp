@@ -2,6 +2,8 @@
 #include <fstream>
 #include "PlayerDB.h"
 #include "Player.h"
+#include <string.h>
+#include <stdio.h>
 
 void PlayerDB::Add(const char* name, int score)
 {
@@ -21,37 +23,109 @@ void PlayerDB::Add(const char* name, int score)
     m_count += 1;
 }
 
-void PlayerDB::Remove(Player)
+bool PlayerDB::Remove(Player player)
 {
-    
-}
+    Player* temp = new Player[m_count - 1];
+    int tempCount = 0;
 
-Player PlayerDB::GetByName(char player[32])
-{
-    for (int i = 0; i < m_count * sizeof(Player); i++)
+    for (int i = 0; i < m_count; i++)
     {
-        if (m_records[m_count * sizeof(Player)].name == player)
+        if (!(strcmp(m_records[i].name, player.name) == 0 && m_records[i].score == player.score))
         {
-            return m_records[m_count * sizeof(Player)];
+            temp[tempCount] = m_records[i];
+            tempCount += 1;
         }
     }
 
-    return Player("Player Doesn't Exist", 0);
+    if (tempCount != m_count)
+    {
+        delete[] m_records;
+        m_records = temp;
+        m_count = tempCount;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
-void PlayerDB::GetByScore()
+Player PlayerDB::GetByName(const char* player, int count)
 {
+    if (strcmp(m_records[count].name, player) == 0)
+    {
+        return m_records[count];
+    }
 
+    return NULL;
 }
 
-void PlayerDB::UpdatePlayers(Player)
+Player PlayerDB::GetByScore(int score, int count)
 {
+    if (m_records[count].score == score)
+    {
+        return m_records[count];
+    }
 
+    return NULL;
 }
 
-void PlayerDB::Sort()
+bool PlayerDB::UpdatePlayers(Player currentPlayer, Player newPlayer)
 {
+    for (int i = 0; i < m_count; i++)
+    {
+        if (strcmp(m_records[i].name, currentPlayer.name) == 0 && m_records[i].score == currentPlayer.score)
+        {
+            m_records[i] = newPlayer;
+            return true;
+        }
+    }
 
+    return false;
+}
+
+bool PlayerDB::Sort(const char* sortBy)
+{
+    if (strcmp(sortBy, "names") == 0)
+    {
+        Player* temp = new Player[1];
+
+        for (int i = 0; i < m_count - 1; i++)
+        {
+            for (int j = 0; j < m_count - i - 1; j++)
+            {
+                if ((int)m_records[j].name[0] > (int)m_records[j + 1].name[0])
+                {
+                    temp[0] = m_records[j];
+                    m_records[j] = m_records[j + 1];
+                    m_records[j + 1] = temp[0];
+                }
+            }
+        }
+
+        return true;
+    }
+    else if (strcmp(sortBy, "scores") == 0)
+    {
+        Player* temp = new Player[1];
+
+        for (int i = 0; i < m_count - 1; i++)
+        {
+            for (int j = 0; j < m_count - i - 1; j++)
+            {
+                if (m_records[j].score > m_records[j + 1].score)
+                {
+                    temp[0] = m_records[j];
+                    m_records[j] = m_records[j + 1];
+                    m_records[j + 1] = temp[0];
+                }
+            }
+        }
+
+        return true;
+    }
+    else
+        return false;
 }
 
 void PlayerDB::Save(const char* filename)
@@ -98,9 +172,20 @@ void PlayerDB::Clear(const char* filename)
     }
 }
 
-void PlayerDB::GetHighScore()
+Player PlayerDB::GetHighScore()
 {
+    Player* temp = new Player[1];
+    temp[0] = m_records[0];
 
+    for (int i = 0; i < m_count; i++)
+    {
+        if (m_records[m_count].score > temp[0].score) // not done
+        {
+            temp[0] = m_records[i];
+        }
+    }
+
+    return temp[0];
 }
 
 Player PlayerDB::ShowAllPlayers(int count)
