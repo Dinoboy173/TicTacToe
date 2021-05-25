@@ -1,0 +1,9 @@
+﻿  main.cpp
+  TicTacToeApp.cpp
+  TicTacToeGame.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Assessment01_TicTacToe\TicTacToeGame.cpp(51): warning C4715: 'TicTacToe::SwitchPlayer': not all control paths return a value
+  All 33 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Assessment01_TicTacToe.vcxproj -> C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Release\Assessment01_TicTacToe.exe

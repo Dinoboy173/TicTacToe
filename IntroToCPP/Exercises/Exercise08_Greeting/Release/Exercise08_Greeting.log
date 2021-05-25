@@ -1,0 +1,14 @@
+﻿  Greetings.cpp
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(7,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(16,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(28,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(36,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(44,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(55,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise08_Greeting\Greetings.cpp(62,35): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 131 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Exercise08_Greeting.vcxproj -> C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Release\Exercise08_Greeting.exe

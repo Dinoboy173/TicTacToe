@@ -1,0 +1,5 @@
+﻿  App.cpp
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise14_FileIO_numbers\App.cpp(19,8): error C3861: 'time': identifier not found
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise14_FileIO_numbers\App.cpp(23,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise14_FileIO_numbers\App.cpp(24,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp

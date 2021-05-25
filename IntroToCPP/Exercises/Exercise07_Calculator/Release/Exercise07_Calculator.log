@@ -1,0 +1,7 @@
+﻿  main.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise07_Calculator\main.cpp(14): warning C4715: 'Calculate': not all control paths return a value
+  All 118 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Exercise07_Calculator.vcxproj -> C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Release\Exercise07_Calculator.exe

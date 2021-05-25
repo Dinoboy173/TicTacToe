@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise07_Calculator\main.cpp(14): warning C4715: 'Calculate': not all control paths return a value
+  Exercise07_Calculator.vcxproj -> C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Debug\Exercise07_Calculator.exe

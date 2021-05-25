@@ -1,0 +1,7 @@
+﻿  App.cpp
+  main.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 14 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Exercise13_RockPaperScissors.vcxproj -> C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Release\Exercise14_RockPaperScissors.exe

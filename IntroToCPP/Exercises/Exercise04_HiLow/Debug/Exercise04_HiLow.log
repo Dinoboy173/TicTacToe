@@ -1,0 +1,16 @@
+﻿  main.cpp
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(19,4): error C2059: syntax error: 'if'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(20,4): error C2143: syntax error: missing ';' before '{'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(20,4): error C2059: syntax error: '{'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(24,4): error C2059: syntax error: 'else'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(25,4): error C2143: syntax error: missing ';' before '{'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(25,4): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(29,4): error C2059: syntax error: 'else'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(30,4): error C2143: syntax error: missing ';' before '{'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(30,4): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(34,2): error C2059: syntax error: ')'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(35,2): error C2059: syntax error: 'while'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(37,2): error C2059: syntax error: 'return'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(38,1): error C2059: syntax error: '}'
+C:\Users\s201031\Desktop\TicTacToe\IntroToCPP\Exercise04_HiLow\main.cpp(38,1): error C2143: syntax error: missing ';' before '}'
