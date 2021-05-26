@@ -14,24 +14,24 @@ int main(int argc, char** argv)
 	std::cout << "Guess a number between 0 and 100: ";
 	std::cin >> guess;
 
-	do // redo all of this
-		(
-			if (guess > rand1)
-			{
-				std::cout << "Lower, have another guess: ";
-				std::cin >> guess;
-			}
-			else if (guess < rand1)
-			{
-				std::cout << "Higher, have another guess: ";
-				std::cin >> guess;
-			}
-			else if (guess == rand1)
-			{
-				std::cout << "Correct";
-				right = true;
-			}
-	);
+	do
+	{
+		if (guess > rand1)
+		{
+			std::cout << "Lower, have another guess: ";
+			std::cin >> guess;
+		}
+		else if (guess < rand1)
+		{
+			std::cout << "Higher, have another guess: ";
+			std::cin >> guess;
+		}
+		else if (guess == rand1)
+		{
+			std::cout << "Correct";
+			right = true;
+		}
+	}
 	while (!right);
 
 	return 0;

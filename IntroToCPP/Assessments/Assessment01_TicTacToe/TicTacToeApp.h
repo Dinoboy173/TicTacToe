@@ -4,8 +4,9 @@
 enum class GameStates
 {
     MENU,
-    CONTROLS,
     PLAY,
+    CONTROLS,
+    QUIT,
     WIN
 };
 
@@ -29,6 +30,13 @@ enum class Tokens
     X = 120
 };
 
+enum class Direction
+{
+    NORTH,
+    WEST,
+    EAST,
+    SOUTH
+};
 
 class TicTacToeApp
 {
@@ -44,7 +52,7 @@ public:
     void RunWinState();
 
     void MenuControl();
-    void MiscControl();
+    void MultiMenuControl();
     void GameControl();
     
     void PlaceBlank();
@@ -57,13 +65,10 @@ protected:
     bool m_shouldQuit = false;
     bool invalidPlacement = false;
     int m_menuSelection = 1;
-    int m_gameSelection = 0;
     bool winner = false;
     GameStates m_gameState = GameStates::MENU;
 
     char m_currentPlayer = (char)Tokens::X;
-
-    //TicTacToe m_game;
 
 private:
     int m_windowWidth = 800;
