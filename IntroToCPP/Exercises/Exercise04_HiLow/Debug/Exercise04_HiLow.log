@@ -1,5 +1,1 @@
-﻿  main.cpp
-C:\Users\s201031\Desktop\Work\TicTacToe\IntroToCPP\Exercises\Exercise04_HiLow\main.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\s201031\Desktop\Work\TicTacToe\IntroToCPP\Exercises\Exercise04_HiLow\main.cpp(19,13): warning C4018: '>': signed/unsigned mismatch
-C:\Users\s201031\Desktop\Work\TicTacToe\IntroToCPP\Exercises\Exercise04_HiLow\main.cpp(24,18): warning C4018: '<': signed/unsigned mismatch
-  Exercise04_HiLow.vcxproj -> C:\Users\s201031\Desktop\Work\TicTacToe\IntroToCPP\Debug\Exercise04_HiLow.exe
+﻿  Exercise04_HiLow.vcxproj -> C:\Users\s201031\Desktop\Work\TicTacToe\IntroToCPP\Debug\Exercise04_HiLow.exe
